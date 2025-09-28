@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idle Dungeon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏰 Idle Dungeon</h1>
+            <div class="player-info">
+                <span id="player-name">Loading...</span>
+                <span id="player-id"></span>
+            </div>
+        </header>
+
+        <main>
+            <div class="game-panels">
+                <!-- Progress Panel -->
+                <div class="panel progress-panel">
+                    <h2>🎯 Progress</h2>
+                    <div class="progress-stats">
+                        <div class="stat">
+                            <span class="label">Dungeon Level:</span>
+                            <span id="dungeon-level">1</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Gold:</span>
+                            <span id="gold">0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Experience:</span>
+                            <span id="experience">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Factory Panel -->
+                <div class="panel factory-panel">
+                    <h2>🏭 Hero Factory</h2>
+                    <div class="stations">
+                        <div class="station" data-station="hp">
+                            <div class="station-header">
+                                <h3>❤️ HP Station</h3>
+                                <button class="upgrade-btn" onclick="upgradeStation('hp')">Upgrade</button>
+                            </div>
+                            <div class="station-stats">
+                                <span>Level: <span id="hp-level">1</span></span>
+                                <span>Multiplier: <span id="hp-multiplier">1.0x</span></span>
+                                <span>Cost: <span id="hp-cost">100</span> gold</span>
+                            </div>
+                        </div>
+
+                        <div class="station" data-station="armor">
+                            <div class="station-header">
+                                <h3>🛡️ Armor Station</h3>
+                                <button class="upgrade-btn" onclick="upgradeStation('armor')">Upgrade</button>
+                            </div>
+                            <div class="station-stats">
+                                <span>Level: <span id="armor-level">1</span></span>
+                                <span>Multiplier: <span id="armor-multiplier">1.0x</span></span>
+                                <span>Cost: <span id="armor-cost">100</span> gold</span>
+                            </div>
+                        </div>
+
+                        <div class="station" data-station="attack">
+                            <div class="station-header">
+                                <h3>⚔️ Attack Station</h3>
+                                <button class="upgrade-btn" onclick="upgradeStation('attack')">Upgrade</button>
+                            </div>
+                            <div class="station-stats">
+                                <span>Level: <span id="attack-level">1</span></span>
+                                <span>Multiplier: <span id="attack-multiplier">1.0x</span></span>
+                                <span>Cost: <span id="attack-cost">100</span> gold</span>
+                            </div>
+                        </div>
+
+                        <div class="station" data-station="loot">
+                            <div class="station-header">
+                                <h3>💰 Loot Station</h3>
+                                <button class="upgrade-btn" onclick="upgradeStation('loot')">Upgrade</button>
+                            </div>
+                            <div class="station-stats">
+                                <span>Level: <span id="loot-level">1</span></span>
+                                <span>Multiplier: <span id="loot-multiplier">1.0x</span></span>
+                                <span>Cost: <span id="loot-cost">100</span> gold</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Battle Log Panel -->
+                <div class="panel battle-panel">
+                    <h2>⚔️ Battle Log</h2>
+                    <div id="battle-log" class="battle-log">
+                        <div class="log-entry">Game starting...</div>
+                    </div>
+                </div>
+
+                <!-- Multiplayer Panel -->
+                <div class="panel multiplayer-panel">
+                    <h2>👥 Players Online</h2>
+                    <div id="online-players" class="player-list">
+                        <div class="loading">Loading players...</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="connection-status">
+                Status: <span id="connection-status">Connecting...</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
